@@ -7,6 +7,7 @@ use syn::parse_macro_input;
 
 #[proc_macro_derive(TableData, attributes(table))]
 pub fn derive(input: TokenStream) -> TokenStream {
+    eprintln!("{input:?}");
     let input = parse_macro_input!(input as syn::DeriveInput);
 
     let ast = &input;
